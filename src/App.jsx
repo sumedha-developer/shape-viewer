@@ -9,7 +9,7 @@ const App = () => {
   const [shapes, setShapes] = useState([]);
   const [shapeFileName, setShapeFileName] = useState(null);
 
-  const handleFileUpload = (event) => {
+  const handleFileOpen = (event) => {
     const file = event.target.files[0];
     if (file) {
       setShapeFileName(file.name);
@@ -25,8 +25,8 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <TopToolbar shapeFileName={shapeFileName} onFileUpload={handleFileUpload} />
-      <LeftMenu />
+      <TopToolbar shapeFileName={shapeFileName} onFileUpload={handleFileOpen} />
+      <LeftMenu onFileOpen={handleFileOpen} />
       <ShapeViewport shapes={shapes} />
     </div>
   );

@@ -23,7 +23,7 @@ const ShapeRenderer = ({ shape }) => {
   }
 
   if (shape.type === 'Triangle') {
-    const borderStyle = {
+    const triangleStyle = {
       position: 'absolute',
       left: `${shape.x}px`,
       top: `${shape.y}px`,
@@ -34,12 +34,12 @@ const ShapeRenderer = ({ shape }) => {
       borderBottom: `${shape.height}px solid #${shape.color}`,
       zIndex: shape.z,
     };
-    return <div style={borderStyle}></div>;
+    return <div style={triangleStyle}></div>;
   }
 
   if (shape.type === 'Polygon') {
     const points = shape.vertices
-      .map(([x, y]) => `${x + shape.x},${y + shape.y}`)
+      .map(([vx, vy]) => `${vx + shape.x},${vy + shape.y}`)
       .join(' ');
     return (
       <svg
@@ -56,7 +56,7 @@ const ShapeRenderer = ({ shape }) => {
     );
   }
 
-  return null; // For unsupported shapes
+  return null; // Unsupported shapes
 };
 
 ShapeRenderer.propTypes = {
@@ -69,7 +69,7 @@ ShapeRenderer.propTypes = {
     height: PropTypes.number,
     color: PropTypes.string.isRequired,
     vertices: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)), // Only for Polygon
-  }),
+  }).isRequired,
 };
 
 export default ShapeRenderer;
