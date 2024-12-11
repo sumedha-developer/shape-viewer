@@ -5,7 +5,7 @@ import Logo from './../logo.png';
 const TopToolbar = ({ shapeFileName, onFileUpload }) => {
   return (
     <header className="top-toolbar">
-      <h1><img src={Logo} alt="logo" className="logo" /> Shape Viewer</h1>
+      <h1 style={{ margin: 0 }}><img src={Logo} alt="logo" className="logo" /> Shape Viewer</h1>
       <button>
         {shapeFileName || (
           <label>
