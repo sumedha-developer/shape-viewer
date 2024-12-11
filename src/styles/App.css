@@ -28,3 +28,27 @@
 .logo {
   height: 24px;
 }
+
+.button {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: white;
+  background: linear-gradient(90deg, #4caf50, #81c784);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: linear-gradient(90deg, #388e3c, #66bb6a);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+.button:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

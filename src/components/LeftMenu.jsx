@@ -8,7 +8,7 @@ const LeftMenu = ({ onFileOpen }) => {
 
   return (
     <aside className="left-menu">
-      <button onClick={handleButtonClick}>Open Shape File</button>
+      <button className="button" onClick={handleButtonClick}>Open Shape File</button>
       <input
         type="file"
         id="file-input-left-menu"

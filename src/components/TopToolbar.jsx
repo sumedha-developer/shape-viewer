@@ -6,7 +6,7 @@ const TopToolbar = ({ shapeFileName, onFileUpload }) => {
   return (
     <header className="top-toolbar">
       <h1 style={{ margin: 0 }}><img src={Logo} alt="logo" className="logo" /> Shape Viewer</h1>
-      <button>
+      <button className="button">
         {shapeFileName || (
           <label>
             Open Shape File
