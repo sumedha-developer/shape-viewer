@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Logo from './../logo.png';
 
 const TopToolbar = ({ shapeFileName, onFileUpload }) => {
   return (
     <header className="top-toolbar">
-      <h1>Shape Viewer</h1>
+      <h1><img src={Logo} alt="logo" className="logo" /> Shape Viewer</h1>
       <button>
         {shapeFileName || (
           <label>
