@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import PolygonRenderer from './PolygonRenderer';
 
-/**
- * ShapeRenderer Component
- * Handles rendering of different shapes (Rectangle, Triangle, Polygon).
- */
 const ShapeRenderer = ({ shape }) => {
   if (shape.type === 'Rectangle') {
     return (
@@ -38,25 +35,10 @@ const ShapeRenderer = ({ shape }) => {
   }
 
   if (shape.type === 'Polygon') {
-    const points = shape.vertices
-      .map(([vx, vy]) => `${vx + shape.x},${vy + shape.y}`)
-      .join(' ');
-    return (
-      <svg
-        style={{
-          position: 'absolute',
-          left: 0,
-          top: 0,
-          zIndex: shape.z,
-          overflow: 'visible',
-        }}
-      >
-        <polygon points={points} fill={`#${shape.color}`} />
-      </svg>
-    );
+    return <PolygonRenderer {...shape} />;
   }
 
-  return null; // Unsupported shapes
+  return null; // For unsupported shapes
 };
 
 ShapeRenderer.propTypes = {
