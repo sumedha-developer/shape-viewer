@@ -1,0 +1,4 @@
+Rectangle, 0, 0, 0, 50, 50, ff0000; // Red rectangle at (0, 0)
+Rectangle, 70, 70, 1, 100, 200, 00ff00; // Green rectangle at (70, 70)
+Polygon, 100, 100, 2, "0,0;50,0;50,50;0,50", 0000ff; // Blue square polygon
+Triangle, 200, 200, 3, 50, 50, ff00ff; // Purple triangle
