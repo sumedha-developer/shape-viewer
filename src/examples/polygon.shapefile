@@ -1,1 +1,2 @@
-Polygon, 0, 0, 1, "30,30;60,90;120,60", 00ff00;
+Polygon, 50, 50, 1, "0,0;50,0;50,50;0,50", 00ff00;  // A square polygon
+Polygon, 100, 100, 2, "0,0;100,50;50,100", ff0000;  // A triangle-like polygon
