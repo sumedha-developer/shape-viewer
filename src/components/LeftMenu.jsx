@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 const LeftMenu = ({ onFileOpen }) => {
   const handleButtonClick = () => {
-    // Programmatically trigger the file input click
     document.getElementById('file-input-left-menu').click();
   };
 
@@ -21,7 +20,7 @@ const LeftMenu = ({ onFileOpen }) => {
 };
 
 LeftMenu.propTypes = {
-  onFileOpen: PropTypes.func.isRequired, // Expects a file open handler
+  onFileOpen: PropTypes.func.isRequired,
 };
 
 export default LeftMenu;

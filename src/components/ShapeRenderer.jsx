@@ -38,7 +38,7 @@ const ShapeRenderer = ({ shape }) => {
     return <PolygonRenderer {...shape} />;
   }
 
-  return null; // For unsupported shapes
+  return null;
 };
 
 ShapeRenderer.propTypes = {
@@ -50,7 +50,7 @@ ShapeRenderer.propTypes = {
     width: PropTypes.number,
     height: PropTypes.number,
     color: PropTypes.string.isRequired,
-    vertices: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)), // Only for Polygon
+    vertices: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)),
   }).isRequired,
 };
 

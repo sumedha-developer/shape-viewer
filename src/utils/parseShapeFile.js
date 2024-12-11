@@ -1,33 +1,42 @@
 export const parseShapeFile = (content) => {
   return content
-    .split('\n') // Split shapes by newline delimiter
+    .split('\n')
     .map((line) => {
-      // Only process content before the last ';'
-      const cleanedLine = line.split(';')[0].trim();
-      if (!cleanedLine) return null; // Ignore empty or invalid lines
-
-      const parts = cleanedLine.split(',').map((val) => val.trim());
-      const [type, x, y, z, widthOrVertices, heightOrColor, color] = parts;
-
+      const lastSemicolonIndex = line.lastIndexOf(';');
+      if (lastSemicolonIndex === -1) return null;
+      const cleanedLine = line.substring(0, lastSemicolonIndex).trim();
+      if (!cleanedLine) return null;
+      const type = cleanedLine.split(',')[0];
       if (type === 'Polygon') {
-        // Parse vertices for polygons
-        const vertices = widthOrVertices
-          .replace(/"/g, '') // Remove quotes
-          .split(';')        // Split into coordinate pairs
-          .map((coord) => coord.split(',').map(Number)); // Convert each pair to [x, y]
-        return { type, x: +x, y: +y, z: +z, vertices, color: heightOrColor };
+        const parts = cleanedLine.split(", ");
+        const type = parts[0];
+        const x = parseInt(parts[1]);
+        const y = parseInt(parts[2]);
+        const z = parseInt(parts[3]);
+        const verticesStr = parts[4].slice(1, -1);
+        const color = parts[5];
+        const vertices = verticesStr.split(";").map(vertex => vertex.split(",").map(Number));
+        return {
+          type,
+          x: +x,
+          y: +y,
+          z: +z,
+          vertices,
+          color: color
+        };
+      } else {
+        const parts = cleanedLine.split(',').map((val) => val.trim());
+        const [type, x, y, z, widthOrVertices, heightOrColor, color] = parts;
+        return {
+          type,
+          x: +x,
+          y: +y,
+          z: +z,
+          width: +widthOrVertices,
+          height: +heightOrColor,
+          color,
+        };
       }
-
-      // For Rectangle or Triangle
-      return {
-        type,
-        x: +x,
-        y: +y,
-        z: +z,
-        width: +widthOrVertices,
-        height: +heightOrColor,
-        color,
-      };
     })
-    .filter(Boolean); // Remove any nulls (empty or invalid lines)
+    .filter(Boolean);
 };
