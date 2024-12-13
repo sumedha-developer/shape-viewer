@@ -1,3 +1,34 @@
+# Shape Viewer App
+Testing files are located in src/examples folder
+
+○ How many assignment iterations did you complete?
+All 5 iterations
+
+○ Did you implement any bonus features/extra features? Which ones?
+None? First 3
+
+○ Are there any major known problems with the solution?
+None
+
+Things to add:
+
+● Structure, Cleanness of Code, and Code Comments.
+● Functionality against requirements.
+● Performance and scalability.
+● Extensibility of technical design.
+● Error handling.
+● Design creativity and aesthetics.
+● Extra points to any additional functionality you add, the user might want or
+need.
+
+Bonus Feature:
+
+Shape Translation
+Shape Creation
+Shape Rotation
+
+____________________________________________________________________________________________________
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
