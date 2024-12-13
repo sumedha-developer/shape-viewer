@@ -23,5 +23,7 @@ Testing files are located in `src/examples` folder
 
 - Correct shape format examples (text-based and human readable):
 > Rectangle, 0, 0, 0, 50, 50, ff0000;
+
 > Triangle, 150, 50, 1, 50, 50, 00ff00;
+
 > Polygon, 200, 200, 1, "0,0;25,0;50,25;25,25;25,50", 4b0082;
