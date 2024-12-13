@@ -14,7 +14,7 @@ Testing files are located in `src/examples` folder
 > All 5 iterations
 
 - Did you implement any bonus features/extra features? Which ones? None?
-> First 3
+> None
 
 - Are there any major known problems with the solution?
 > None
