@@ -1,25 +1,20 @@
-# Shape Viewer App
-Testing files are located in src/examples folder
+# Shape Viewer Web Application
 
-How many assignment iterations did you complete?
-All 5 iterations
+React.js (v19) framework was used for the UI Development.
 
-Did you implement any bonus features/extra features? Which ones? None?
-First 3
+To run the app, instal packages using `npm i` and then use `npm start` to start the app. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Are there any major known problems with the solution?
-None
+## Testing files
 
-Things to add:
+Testing files are located in `src/examples` folder
 
-Code Comments.
-Error handling.
+## Questions
 
-Bonus Feature:
+- How many assignment iterations did you complete?
+> All 5 iterations
 
-Shape Translation
-Shape Creation
-Shape Rotation
+- Did you implement any bonus features/extra features? Which ones? None?
+> First 3
 
-React.js Framework was used for the UI Development
-To run the application, instal packages using `npm i` and then use `npm start` to start the application. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Are there any major known problems with the solution?
+> None
