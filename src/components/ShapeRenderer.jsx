@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PolygonRenderer from './PolygonRenderer';
 
+// Renders individual shapes based on their type
 const ShapeRenderer = ({ shape }) => {
   if (shape.type === 'Rectangle') {
     return (
@@ -38,19 +39,19 @@ const ShapeRenderer = ({ shape }) => {
     return <PolygonRenderer {...shape} />;
   }
 
-  return null;
+  return null; // Return null if the shape type is unrecognized
 };
 
 ShapeRenderer.propTypes = {
   shape: PropTypes.shape({
-    type: PropTypes.string.isRequired,
-    x: PropTypes.number.isRequired,
-    y: PropTypes.number.isRequired,
-    z: PropTypes.number,
-    width: PropTypes.number,
-    height: PropTypes.number,
-    color: PropTypes.string.isRequired,
-    vertices: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)),
+    type: PropTypes.string.isRequired, // Type of the shape
+    x: PropTypes.number.isRequired, // X-coordinate position
+    y: PropTypes.number.isRequired, // Y-coordinate position
+    z: PropTypes.number, // Z-index for stacking order
+    width: PropTypes.number, // Width of the shape
+    height: PropTypes.number, // Height of the shape
+    color: PropTypes.string.isRequired, // Color of the shape
+    vertices: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)), // For polygons
   }).isRequired,
 };
 
